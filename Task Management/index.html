@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        .sign-in-register-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db; /* Blue color, you can change it to match your design */
+            color: #fff; /* White text color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .sign-in-register-btn:hover {
+                background-color: #2980b9; /* Darker shade of blue on hover */
+            }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Task Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="dashboard-link">Dashboard</a></li>
+                <li><a href="#" id="tasks-link">Tasks</a></li>
+                <li><a href="#" id="calendar-link">Calendar</a></li>
+                <li><a href="#" class="sign-in-register-btn">Sign In / Register</a></li> <!-- Sign In / Register button -->
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- User Registration Form -->
+        <section id="sign-in-register">
+            <h2>Sign In</h2>
+            <form id="sign-in-form">
+                <div class="form-group">
+                    <label for="signin-username">Username:</label>
+                    <input type="text" id="signin-username" name="signin-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="signin-password">Password:</label>
+                    <input type="password" id="signin-password" name="signin-password" required>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+            <hr>
+            <h2>Register</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" style="display: none;">
+            <h2>Welcome to Your Dashboard</h2>
+            <div id="user-profile">
+                <!-- Display user profile information here -->
+                <h3>User Profile</h3>
+                <p>Name: John Doe</p>
+                <p>Email: john.doe@example.com</p>
+                <!-- Add more user profile details as needed -->
+            </div>
+            <div id="recent-tasks">
+                <!-- Display recent tasks here -->
+                <h3>Recent Tasks</h3>
+                <ul>
+                    <li>Task 1: Complete project presentation</li>
+                    <li>Task 2: Review feedback from team meeting</li>
+                    <!-- Add more recent tasks as needed -->
+                </ul>
+            </div>
+            <div id="upcoming-events">
+                <!-- Display upcoming events here -->
+                <h3>Upcoming Events</h3>
+                <ul>
+                    <li>Event 1: Team building retreat (Feb 15)</li>
+                    <li>Event 2: Client meeting (Feb 20)</li>
+                    <!-- Add more upcoming events as needed -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Tasks Section -->
+        <section id="tasks-section" style="display: none;">
+            <h2>Tasks</h2>
+            <!-- Filter Tasks Section -->
+            <section id="filter-tasks">
+                <h2>Filter Tasks</h2>
+                <select id="filter-by-priority">
+                    <option value="all">All</option>
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+            </section>
+
+            <!-- Add Task Section -->
+            <section id="add-task">
+                <h2>Add New Task</h2>
+                <button id="show-task-form-btn">Add Task</button>
+                <form id="task-form" style="display: none;">
+                    <!-- Task form fields here -->
+                    <div class="form-group">
+                        <label for="task-title">Task Title:</label>
+                        <input type="text" id="task-title" name="task-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-description">Description:</label>
+                        <textarea id="task-description" name="task-description" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority:</label>
+                        <select id="task-priority" name="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <button type="submit">Add Task</button>
+                </form>
+            </section>
+
+            <!-- Task List Section -->
+            <section id="task-list">
+                <h2>Task List</h2>
+                <ul id="tasks">
+                    <!-- Task items will be dynamically added here -->
+                </ul>
+            </section>
+
+            <!-- Task Details Modal -->
+            <div id="task-details-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Task Details</h2>
+                    <div id="task-details">
+                        <!-- Task details will be dynamically populated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section id="calendar-section" style="display: none;">
+            <h2>Calendar</h2>
+            <!-- Add calendar content here -->
+        </section>
+    </main>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
